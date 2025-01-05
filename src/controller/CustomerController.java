@@ -22,13 +22,25 @@ public class CustomerController {
     @FXML
     private TextField txtTitle;
 
-     @FXML
+    @FXML
     void btnCustomerDeleteOnAction(ActionEvent event) {
 
     }
 
     @FXML
     void btnCustomerSaveOnAction(ActionEvent event) {
+        System.out.println("Save Button is working fine");
 
+        String id = txtId.getText();
+        String title = txtTitle.getText();
+        String name = txtName.getText();
+        String contact = txtContact.getText();
+        String address = txtAddress.getText();
+
+         System.out.println("id : "+id);
+         System.out.println("title : "+title);
+         System.out.println("name : "+name);
+         System.out.println("contact : "+contact);
+         System.out.println("address : "+address);
     }
 }

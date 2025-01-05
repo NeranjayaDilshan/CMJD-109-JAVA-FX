@@ -11,13 +11,28 @@ public class CustomerController {
     private TextArea txtAddress;
 
     @FXML
+    private TextField txtCity;
+
+    @FXML
     private TextField txtContact;
+
+    @FXML
+    private TextField txtDob;
 
     @FXML
     private TextField txtId;
 
     @FXML
     private TextField txtName;
+
+    @FXML
+    private TextField txtPostalCode;
+
+    @FXML
+    private TextField txtProvince;
+
+    @FXML
+    private TextField txtSalary;
 
     @FXML
     private TextField txtTitle;
@@ -36,11 +51,16 @@ public class CustomerController {
         String name = txtName.getText();
         String contact = txtContact.getText();
         String address = txtAddress.getText();
+        String salary = txtSalary.getText();
+        String city = txtCity.getText();
+        String province = txtProvince.getText();
+        String postalCode = txtPostalCode.getText();
+        String dob = txtDob.getText();
 
-         System.out.println("id : "+id);
-         System.out.println("title : "+title);
-         System.out.println("name : "+name);
-         System.out.println("contact : "+contact);
-         System.out.println("address : "+address);
+        System.out.println("id : " + id);
+        System.out.println("title : " + title);
+        System.out.println("name : " + name);
+        System.out.println("contact : " + contact);
+        System.out.println("address : " + address);
     }
 }

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import dto.CustomerDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import service.CustomerService;
@@ -43,6 +45,25 @@ public class CustomerController {
 
     @FXML
     private TextField txtTitle;
+
+    
+    @FXML
+    private TableColumn<CustomerDto, String> colAddress;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colContact;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colId;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colName;
+
+    @FXML
+    private TableColumn<CustomerDto, String> colTitle;
+
+    @FXML
+    private TableView<CustomerDto> tblCustomer;
 
     @FXML
     void btnCustomerDeleteOnAction(ActionEvent event) {

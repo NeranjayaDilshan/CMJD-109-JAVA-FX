@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import service.CustomerService;
 import service.ServiceFactory;
 
@@ -51,8 +52,9 @@ public class CustomerController {
     @FXML
     private TableColumn<CustomerDto, String> colAddress;
 
+    
     @FXML
-    private TableColumn<CustomerDto, String> colContact;
+    private TableColumn<CustomerDto, Double> colSalary;
 
     @FXML
     private TableColumn<CustomerDto, String> colId;
@@ -79,6 +81,14 @@ public class CustomerController {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+
     }
 
     private void getAllCustomer() throws Exception {

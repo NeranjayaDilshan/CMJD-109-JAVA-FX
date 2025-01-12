@@ -1,5 +1,6 @@
 package dao.custom.impl;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dao.CurdUtil;
@@ -42,8 +43,16 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public ArrayList<CustomerEntity> getAll() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+       ArrayList<CustomerEntity> customerEntities = new ArrayList<>();
+        ResultSet rst = CurdUtil.extecuteQuery("SELECT * FROM Customer");
+        while (rst.next()) {
+            customerEntities.add(new CustomerEntity(rst.getString("CustID"), rst.getString("CustTitle"),
+                    rst.getString("CustName"), rst.getString("DOB"),
+                    rst.getDouble("salary"), rst.getString("CustAddress"),
+                    rst.getString("City"),
+                    rst.getString("Province"), rst.getString("PostalCode")));
+        }
+        return customerEntities;
     }
 
 }

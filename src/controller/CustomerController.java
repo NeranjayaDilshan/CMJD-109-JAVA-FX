@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import dto.CustomerDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,6 +49,21 @@ public class CustomerController {
 
     }
 
+    public void initialize() {
+        System.out.println("this is the first method");
+        try {
+            getAllCustomer();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    private void getAllCustomer() throws Exception {
+       ArrayList<CustomerDto> all = customerService.getAll();
+       System.out.println(all);
+    }
+
     @FXML
     void btnCustomerSaveOnAction(ActionEvent event) throws Exception {
         System.out.println("Save Button is working fine");
@@ -71,4 +88,5 @@ public class CustomerController {
         String save = customerService.save(customerDto);
         System.out.println(save);
     }
+
 }

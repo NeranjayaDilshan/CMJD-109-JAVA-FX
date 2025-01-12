@@ -3,6 +3,8 @@ package controller;
 import java.util.ArrayList;
 
 import dto.CustomerDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -46,7 +48,6 @@ public class CustomerController {
     @FXML
     private TextField txtTitle;
 
-    
     @FXML
     private TableColumn<CustomerDto, String> colAddress;
 
@@ -81,8 +82,11 @@ public class CustomerController {
     }
 
     private void getAllCustomer() throws Exception {
-       ArrayList<CustomerDto> all = customerService.getAll();
-       System.out.println(all);
+        ArrayList<CustomerDto> all = customerService.getAll();
+        System.out.println(all);
+        ObservableList<CustomerDto> observableArrayList = FXCollections.observableArrayList();
+        observableArrayList.addAll(all);
+        tblCustomer.setItems(observableArrayList);
     }
 
     @FXML

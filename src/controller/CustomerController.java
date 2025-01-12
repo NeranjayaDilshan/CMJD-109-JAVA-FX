@@ -89,6 +89,19 @@ public class CustomerController {
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
 
 
+
+        tblCustomer.getSelectionModel().selectedItemProperty().addListener((obs,oldSelection,newSelection)->{
+            System.out.println("oldSelection : "+oldSelection);
+            System.out.println("newSelection : "+newSelection);
+
+            if(newSelection !=null){
+                txtId.setText(newSelection.getId());
+                txtName.setText(newSelection.getName());
+                txtTitle.setText(newSelection.getTitle());
+            }
+        });
+
+
     }
 
     private void getAllCustomer() throws Exception {

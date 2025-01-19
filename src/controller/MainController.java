@@ -19,11 +19,17 @@ public class MainController {
     @FXML
     void btnCustomerOnAction(ActionEvent event) throws Exception {
         System.out.println("Customer Button Clicked");
-        Stage stage = new Stage();
 
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Customer.fxml"))));
-        stage.setTitle("Customer Form");
-        stage.show();
+        // Stage stage = new Stage();
+        // stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Customer.fxml"))));
+        // stage.setTitle("Customer Form");
+        // stage.show();
+
+        root.getChildren().clear();
+        
+        URL resource = getClass().getResource("../view/Customer.fxml");
+        Parent node = FXMLLoader.load(resource);
+        root.getChildren().add(node);
     }
 
     @FXML
